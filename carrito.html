@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Malvezi.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MALVEZI - Carrito</h1>
+        <nav>
+            <ul>
+                <li><a href="catalogo.html">Inicio</a></li> <!-- Cambio el enlace a catalogo.html -->
+                <li><a href="catalogo.html">Productos</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="listaCarrito">
+                <!-- Aquí se mostrarán los productos en el carrito -->
+            </ul>
+            <p>Total: $<span id="totalCarrito">0</span> mxn</p>
+            <button id="procederPagoBtn">Proceder al Pago</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Tu Tienda en Línea</p>
+    </footer>
+    <script src="scripmalvezi.js"></script>
+    <script>
+        document.getElementById("procederPagoBtn").addEventListener("click", function() {
+            window.location.href = "recibo.html"; // Redirige a la página de recibo al hacer clic en "Proceder al Pago"
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Depósito - Malvezi.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MALVEZI Datos de Depósito</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Productos</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+            </nav>
+    </header>
+    <main>
+        <section id="datosDeposito">
+            <h2>Información para el Depósito</h2>
+            <ul>
+                <li><strong>Cuenta Bancaria:</strong> 4198 2203 3449 1543</li>
+                <li><strong>Nombre:</strong> Malvezi</li>
+                <li><strong>WhatsApp:</strong> 5627152270</li>
+            </ul>
+            <!-- Div para mostrar el código QR -->
+            <div id="codigoQR"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Tu Tienda en Línea</p>
+    </footer>
+    <!-- Biblioteca de JavaScript para generar el código QR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Obtener el contenido del texto para el código QR
+        const qrText = "Cuenta Bancaria: 4198 2203 3449 1543\nNombre: Malvezi\nWhatsApp: 5627152270";
+
+        // Generar el código QR y mostrarlo en el elemento con ID "codigoQR"
+        const qrCode = new QRCode(document.getElementById("codigoQR"), {
+            text: qrText,
+            width: 200,
+            height: 200
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+/* Estilo de texto chidote para el body */
+body {
+    font-family: 'Pacifico', cursive; /* Fuente elegante */
+    font-size: 1.2em; /* Tamaño de fuente */
+    color: #333; /* Color de texto */
+    line-height: 1; /* Altura de línea */
+}
+
+header {
+    background-color: #f32c16; /* Rojo oscuro para el encabezado */
+    color: #fff;
+    padding: 2em 0;
+    text-align: center;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #fafafa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    display: flex; /* Mostrar los productos en forma horizontal */
+    flex-wrap: wrap; /* Permitir que los productos se envuelvan a la siguiente línea si no caben en la misma fila */
+    justify-content: center; /* Centrar los productos horizontalmente */
+    padding: 2em;
+    background-color: #fafafa;
+    border-radius: 20px;
+}
+
+.primer-section {
+    background-color: #f0f0f0; /* Cambia el color de fondo */
+    padding: 2em; /* Ajusta el padding */
+    border-radius: 10px; /* Agrega bordes redondeados */
+    margin-bottom: 20px; /* Añade un margen inferior */
+}
+
+/* Estilo específico para el segundo section */
+.segundo-section {
+    background-color: #eaeaea; /* Cambia el color de fondo */
+    padding: 2em; /* Ajusta el padding */
+    border-radius: 10px; /* Agrega bordes redondeados */
+}
+
+.producto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1em;
+    padding: 1em;
+    width: 300px; /* Ancho fijo para cada producto */
+    text-align: center;
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.contenedor p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: #fff;
+    border-top-left-radius: 50% 20%;
+    border-top-right-radius: 50% 20%;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Estilos para botones */
+button {
+    padding: 0.7em 1em;
+    margin-top: 1em; /* Aumentar el espacio superior entre los botones y el texto */
+    cursor: pointer;
+    background-color: #f32c16; /* Rojo oscuro para los botones */
+    color: #fafafa;
+    border: 2px solid #f32c16; /* Borde */
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-left: auto; /* Mover el botón al extremo derecho de la sección */
+}
+
+button:hover {
+    background-color:#f32c16 ; /* Rojo más oscuro al pasar el cursor */
+    transform: scale(1.05); /* Efecto de aumento al pasar el cursor */
+}
+
+
+.caja__trasera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color:  #f32c16(0, 128, 255, 0.5);
+
+}
+
+.caja__trasera div{
+    margin: 100px 40px;
+    color: #f32c16;
+    transition: all 500ms;
+}
+
+
+.caja__trasera div p,
+.caja__trasera button{
+    margin-top: 30px;
+}
+
+.caja__trasera div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+
+.caja__trasera div p{
+    font-size: 16px;
+    font-weight: 300;
+} 
+
+.caja__trasera button{
+    padding: 10px 40px;
+    border: 2px solid#f32c16;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: #f32c16;
+    outline: none;
+    transition: all 300ms;
+}
+
+.caja__trasera button:hover{
+    background: #f32c16;
+    color: #ffffff ;
+}
+
+/*Formularios*/
+
+.contenedor__login-register{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedor__login-register form{
+    width: 100%;
+    padding: 80px 20px;
+    background: #f32c16;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color:  #f3efee;
+}
+
+.contenedor__login-register form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background:  #ecebeb;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor__login-register form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #f32c16;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: none;
+}
+
+
+
+
+.formulario__login{
+    opacity: 1;
+    display: block;
+}
+.formulario__register{
+    display: none;
+}
+
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .caja__trasera{
+        width: 100%;
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__trasera div{
+        margin: 0px;
+        position: absolute;
+    }
+
+
+    /*Formularios*/
+
+    .contenedor__login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-register form{
+        position: relative;
+    }
+}

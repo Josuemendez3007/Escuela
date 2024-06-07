@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Compra - Malvezi.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> 
+        <h1>MALVEZI
+            Recibo de compra</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Productos</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+            </nav>
+    </header>
+    <main>
+        <section id="recibo">
+            <h2>Productos Agregados al Carrito</h2>
+            <ul id="listaRecibo">
+                <!-- Aquí se mostrarán los productos del carrito -->
+            </ul>
+            <p>Total: $<span id="totalRecibo">0</span> mxn</p>
+            <div>
+                <input type="radio" id="transferencia" name="metodoPago" value="transferencia">
+                <label for="transferencia">Pagar por Transferencia</label><br>
+                <input type="radio" id="qr" name="metodoPago" value="qr">
+                <label for="qr">Pagar con QR</label><br>
+            </div>
+            <button onclick="pagar()">Continuar</button> <!-- Botón para continuar con la opción de pago seleccionada -->
+            <div id="codigoQR"></div> <!-- Aquí se mostrará el código QR -->
+            <div id="codigoQR" class="codigo-qr"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Tu Tienda en Línea</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Obtener los datos del carrito almacenados en localStorage
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        // Función para mostrar los productos del carrito en el recibo
+        function mostrarRecibo() {
+            const listaRecibo = document.getElementById("listaRecibo");
+            let total = 0;
+
+            // Limpiar la lista antes de agregar los productos
+            listaRecibo.innerHTML = "";
+
+            // Iterar sobre los productos en el carrito
+            carrito.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = `${item.nombre} - $${item.precio} mxn`;
+                listaRecibo.appendChild(li);
+                total += item.precio;
+            });
+
+            // Actualizar el total en el recibo
+            document.getElementById("totalRecibo").textContent = total;
+        }
+
+        // Llamar a la función para mostrar el recibo cuando se carga la página
+        mostrarRecibo();
+
+        // Función para continuar con el pago
+        function pagar() {
+            // Obtener el método de pago seleccionado
+            const metodoPago = document.querySelector('input[name="metodoPago"]:checked');
+
+            // Verificar si se seleccionó algún método de pago
+            if (metodoPago) {
+                // Si se seleccionó "Transferencia", mostrar la información de la cuenta bancaria
+                if (metodoPago.value === "transferencia") {
+                    alert("Realiza la transferencia a la cuenta: 4198 2203 3449 1543 (Nombre: Malvezi)\nContacta y envia tu comprobante de transferencia a través de WhatsApp al: 5627152270");
+                    // Limpiar el código QR si se generó previamente
+                    document.getElementById("codigoQR").innerHTML = "";
+                } else {
+                    // Si se seleccionó "QR", redirigir a la página "datosdeposito.html"
+                    window.location.href = "datosdeposito.html";
+                }
+            } else {
+                // Si no se seleccionó ningún método de pago, mostrar un mensaje de error
+                alert("Por favor selecciona un método de pago");
+            }
+        }
+    </script>
+</body>
+</html>
